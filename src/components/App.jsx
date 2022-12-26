@@ -2,24 +2,7 @@
 import { Component } from 'react';
 import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
-
-// export const App = () => {
-//   return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101'
-//       }}
-//     >
-
-//       <Feedback />
-//     </div>
-//   );
-// };
+import { Section } from './Section/Section';
 
 class App extends Component {
   state = {
@@ -48,24 +31,28 @@ class App extends Component {
     const optionsForFeedback = Object.keys(this.state);
 
     return (
-      <div className="feedback">
-        <h2 className="feedback_title">Please leave your feedback for us</h2>
+      <>
+        <Section
+          title="Please leave your feedback for us"
+        >
+          <FeedbackOptions
+            options={optionsForFeedback}
+            onLeaveFeedback={this.onLeaveFeedback}
+          />
+        </Section>
 
-        <FeedbackOptions
-          options={optionsForFeedback}
-          onLeaveFeedback={this.onLeaveFeedback}
-        />
-        
-        <h2 className="feedback_title">Statistics</h2>
-        
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={this.countTotalFeedback()}
-          positivePercentage={this.countPositiveFeedbackPercentage()}
-        />
-      </div>
+        <Section
+          title="Statistics"
+        >
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
+          />
+        </Section>
+      </>
     )
   }
 };
