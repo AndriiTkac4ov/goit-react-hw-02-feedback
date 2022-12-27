@@ -14,7 +14,7 @@ export const FeedbackButton = styled.button`
     transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, border-color 0.25s ease-in-out;
     
     &:not(:last-child){
-        margin-right: 32px;
+        margin-right: ${props => props.theme.spacing(4)};
     }
 
     &:hover,

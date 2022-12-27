@@ -7,7 +7,7 @@ export const StatisticsPart = styled.ul`
 `;
 
 export const StatisticsItem = styled.li`
-    font-size: 24px;
+    font-size: ${props => props.theme.spacing(3)};
     font-weight: 500;
     line-height: 1.5;
 `;
