@@ -7,3 +7,10 @@ export const SectionPart = styled.section`
     background: floralwhite;
     color: palevioletred;
 `;
+
+export const SectionTitle = styled.h2`
+    margin: 0 0 16px 0;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.5;
+`;

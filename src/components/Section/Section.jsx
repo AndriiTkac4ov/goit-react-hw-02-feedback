@@ -1,9 +1,9 @@
 import { PropTypes } from "prop-types";
-import { SectionPart } from "./Section.styled";
+import { SectionPart, SectionTitle } from "./Section.styled";
 
 export const Section = ({ title, children }) => (
     <SectionPart>
-        <h2>{title}</h2>
+        <SectionTitle>{title}</SectionTitle>
         {children}
     </SectionPart>
 );
